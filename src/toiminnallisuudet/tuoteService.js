@@ -2,7 +2,7 @@ import axios from 'axios';
 
 //Tässä GET pyyntö:
 export default function getKaikki(callback){
-axios.get('https://localhost:44376/api/tomaatti/')  
+axios.get('https://localhost:omanumero/api/tomaatti/')  
 .then(response => {  
   //this.setState({ business: response.data }); 
   // console.log(response, 'onnistui')
@@ -18,7 +18,7 @@ axios.get('https://localhost:44376/api/tomaatti/')
 
 // Tässä GET pyyntö Id:n perusteella
 export function getById(id){
-        return axios.get('https://localhost:44376/api/tomaatti/'+id)  
+        return axios.get('https://localhost:omanumero/api/tomaatti/'+id)  
             .then(response => {  
            return response;  
     
@@ -33,7 +33,7 @@ export function getById(id){
 export function postLisää(myJSON){
   console.log(myJSON)
 
-axios.post('https://localhost:44376/api/tomaatti/', myJSON) 
+axios.post('https://localhost:omanumero/api/tomaatti/', myJSON) 
 .then(json => {  
 if(json.status===200){  
   console.log(json.status);  
@@ -52,7 +52,7 @@ alert('Lähetys ei onnistunut');
 // Sitten lähetetään muokatut tiedot PUT pyynnöllä:
 export function putMuokkaa(obj, id)
 {
-  axios.put('https://localhost:44376/api/tomaatti/update/'+id, obj) 
+  axios.put('https://localhost:omanumero/api/tomaatti/update/'+id, obj) 
           .then(res => {
             if(res.data.status===res.data.status){
             console.log(res.data);  
@@ -67,7 +67,7 @@ export function putMuokkaa(obj, id)
 
   //
   console.log(obj);
-  axios.put('https://localhost:44376/api/tomaatti/update/'+id, obj) 
+  axios.put('https://localhost:omanumero/api/tomaatti/update/'+id, obj) 
           .then(
             // response => response.addHeader("Access-Control-Allow-Origin", "*"))
             //  response.addHeader("Access-Control-Allow-Methods", '*')
